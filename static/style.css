@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #4a90e2;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #357abd;
+}
+
+.result {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f1f6ff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.result h2 {
+    margin-top: 0;
+}
+.error {
+    margin-top: 25px;
+    padding: 15px;
+    background: #ffe5e5;
+    color: #c0392b;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+.result.pass {
+    background: #e8f8ee;
+    color: #1e8449;
+}
+
+.result.fail {
+    background: #fdeaea;
+    color: #c0392b;
+}
+.probability-bar {
+    width: 100%;
+    height: 15px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.probability-fill {
+    height: 100%;
+    background: #27ae60;
+    border-radius: 10px;
+}
