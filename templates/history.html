@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="history-page">
+
+    <h1>Student Prediction History</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Study Hours</th>
+                <th>Attendance</th>
+                <th>Previous Score</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record["id"] }}</td>
+                <td>{{ record["study_hours"] }}</td>
+                <td>{{ record["attendance"] }}</td>
+                <td>{{ record["previous_score"] }}</td>
+                <td>{{ record["result"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

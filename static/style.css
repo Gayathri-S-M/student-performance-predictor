@@ -114,3 +114,82 @@ button:hover {
     background: #27ae60;
     border-radius: 10px;
 }
+/* Prediction History Page */
+
+.history-page {
+    margin: 0;
+    padding: 40px;
+    background: #f4f7fb;
+    font-family: Arial, sans-serif;
+}
+
+.history-page h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+.history-page table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+.history-page th,
+.history-page td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.history-page th {
+    background: #4a90e2;
+    color: white;
+}
+
+.history-page tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.history-page tr:hover {
+    background: #eef5ff;
+}
+.history-page h1 {
+    position: static;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 30px 0;
+    font-size: 32px;
+}
+
+.history-page table {
+    display: table;
+}
+.history-page {
+    margin: 0;
+    padding: 40px;
+    background: #f4f7fb;
+    font-family: Arial, sans-serif;
+    display: block;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.history-button {
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    background: #333;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.history-button:hover {
+    background: #555;
+}

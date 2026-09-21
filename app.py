@@ -25,6 +25,23 @@ def students():
     return str([dict(student) for student in students])
 
 
+@app.route("/history")
+def history():
+    conn = get_db_connection()
+
+    records = conn.execute("""
+        SELECT *
+        FROM students
+        ORDER BY id DESC
+    """).fetchall()
+
+    conn.close()
+
+    return render_template(
+        "history.html",
+        records=records
+    )
+
 @app.route("/predict", methods=["POST"])
 def predict():
 

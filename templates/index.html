@@ -63,7 +63,11 @@
 
             <button type="submit">Predict</button>
 
+
         </form>
+        <a href="{{ url_for('history') }}" class="history-button">
+    View Prediction History
+        </a>
         {% if error %}
         <div class="error">
            {{ error }}
