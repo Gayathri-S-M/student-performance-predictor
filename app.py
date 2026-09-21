@@ -1,8 +1,13 @@
 from flask import Flask, render_template, request
 import joblib
 import pandas as pd
+import sqlite3
 
 app = Flask(__name__)
+def get_db_connection():
+    conn = sqlite3.connect("students.db")
+    conn.row_factory = sqlite3.Row
+    return conn
 
 model = joblib.load("model.pkl")
 
@@ -10,6 +15,14 @@ model = joblib.load("model.pkl")
 @app.route("/")
 def home():
     return render_template("index.html")
+
+@app.route("/students")
+def students():
+    conn = get_db_connection()
+    students = conn.execute("SELECT * FROM students").fetchall()
+    conn.close()
+
+    return str([dict(student) for student in students])
 
 
 @app.route("/predict", methods=["POST"])
@@ -43,6 +56,15 @@ def predict():
     )
 
     prediction = model.predict(new_student)[0]
+    conn = get_db_connection()
+
+    conn.execute("""
+        INSERT INTO students (study_hours, attendance, previous_score, result)
+        VALUES (?, ?, ?, ?)
+    """, (study_hours, attendance, previous_score, prediction))
+
+    conn.commit()
+    conn.close()
 
     probability = model.predict_proba(new_student)
 
